@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5d4598;
+  margin: 100px;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.box-container {
+  width: 200px;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border: 40px solid #140c1f;
+  border-radius: 50%;
+}
+/* First Start */
+.circle1 {
+  margin: 0 -20px;
+}
+
+.small-circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Second Start */
+.box-container1 {
+  width: 320px;
+}
+
+.small-circle1 {
+  left: 0;
+  transform-origin: 100px;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    transform-origin: 100px;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform-origin: 100px;
+    transform: rotate(360deg);
+  }
+
+  50.00001% {
+    transform-origin: -60px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform-origin: -60px;
+    transform: rotate(360deg);
+  }
+}
+
+/* Third Start */
+
+.small-circle2 {
+  animation: animate1 4s linear infinite;
+}
+
+.small-circle3 {
+  animation: animate3 4s linear infinite;
+}
+
+.small-circle4 {
+  animation: animate3 4s linear infinite;
+  animation-delay: calc(0.025s * var(--index));
+}
+
+.small-circle4 {
+  animation: animate3 4s linear infinite;
+  animation-delay: calc(0.025s * var(--index));
+}
+
+.glow .small-circle4 {
+  background-color: #0f0;
+  box-shadow: 0 0 30px #0f08;
+}
+
+.small-circle5 {
+  background-color: transparent;
+  animation: animate3 12s linear infinite;
+  animation-delay: calc(0.3s * var(--index));
+  color: #0f0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 5px #0f08, 0 0 15px #0f08, 0 0 25px #0f08, 0 0 50px #0f08;
+}
+
+.small-circle5 b {
+  font-size: 1.5rem;
+  animation: fixedText 12s linear infinite;
+  font-family: consolas;
+  font-weight: normal;
+}
+
+@keyframes animate3 {
+  0% {
+    filter: hue-rotate(0deg);
+    transform-origin: 100px;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform-origin: 100px;
+    transform: rotate(360deg);
+  }
+
+  50.00001% {
+    transform-origin: -60px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+    transform-origin: -60px;
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fixedText {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-360deg);
+  }
+
+  50.00001% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

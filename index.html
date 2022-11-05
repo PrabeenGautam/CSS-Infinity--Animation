@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <!-- Rotate Small Cirle in Big Circle -->
+      <div class="box-container">
+        <div class="circle"></div>
+        <div class="small-circle small-circle1"></div>
+      </div>
+
+      <!-- Rotate Small Cirle in Half Infinity -->
+      <div class="box-container box-container1">
+        <div class="circle circle1"></div>
+        <div class="circle circle1"></div>
+        <div class="small-circle small-circle2"></div>
+      </div>
+
+      <!-- Rotate Small Cirle in Infinity -->
+      <div class="box-container box-container1">
+        <div class="circle circle1"></div>
+        <div class="circle circle1"></div>
+        <div class="small-circle small-circle3"></div>
+      </div>
+
+      <!-- Rotate Tail in Infinity -->
+      <div class="box-container box-container1 trail-box">
+        <div class="circle circle1"></div>
+        <div class="circle circle1"></div>
+      </div>
+
+      <!-- Rotate Glow Tail in Infinity -->
+      <div class="box-container box-container1 trail-box glow">
+        <div class="circle circle1"></div>
+        <div class="circle circle1"></div>
+      </div>
+
+      <!-- Rotate Text in Infinity -->
+      <div class="box-container box-container1 text glow">
+        <div class="circle circle1"></div>
+        <div class="circle circle1"></div>
+        <div class="small-circle small-circle5" style="--index: 1">
+          <b>P</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 2">
+          <b>R</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 3">
+          <b>A</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 4">
+          <b>B</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 5">
+          <b>I</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 6">
+          <b>N</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 7">
+          <b>.</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 8">
+          <b>.</b>
+        </div>
+        <div class="small-circle small-circle5" style="--index: 9">
+          <b>.</b>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    const trailContainer = document.querySelectorAll(".trail-box");
+
+    let htmlCircle = "";
+    for (let i = 0; i < 36; i++) {
+      htmlCircle += `<div class="small-circle small-circle4" style='--index: ${
+        i + 1
+      };'></div>`;
+    }
+
+    trailContainer.forEach((dot) =>
+      dot.insertAdjacentHTML("beforeend", htmlCircle)
+    );
+  </script>
+</html>
